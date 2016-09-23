@@ -49,12 +49,18 @@ describe("Record Store with Records", function() {
     assert.equal( 1019, recordStore.balance );
   });
 
-  it("can audit its financial situation, returning object", function() {
+  it("will not sell a record not in stock", function() {
+    recordStore.sell( new Record( "Justin Bieber", "My World 2.0" ) );
+    assert.equal( 1, recordStore.inventory.length );
+    assert.equal( 1019, recordStore.balance );
+  })
+
+  it("can audit its financial situation (object)", function() {
     var expectedReturn = { balance: 1019, stockValue: 12 };
     assert.deepEqual( expectedReturn, recordStore.audit() );
   });
 
-  it("can audit its financial situation, returning string", function() {
+  it("can audit its financial situation (string)", function() {
     var expectedReturn = "Balance: £1019\nTotal Stock Value: £12";
     assert.equal( expectedReturn, recordStore.prettyAudit() );
   });

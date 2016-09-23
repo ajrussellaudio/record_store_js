@@ -1,5 +1,3 @@
-
-
 var RecordStore = function( name, location, balance ) {
   this.name      = name;
   this.location  = location;
@@ -23,9 +21,11 @@ RecordStore.prototype.listInventory = function() {
 };
 
 RecordStore.prototype.sell = function( record ) {
-  this.balance += record.price;
   var index = this.inventory.indexOf( record );
-  this.inventory.splice(index, 1);
+  if( index >= 0 ) {
+    this.balance += record.price;
+    this.inventory.splice(index, 1);
+  }
 };
 
 RecordStore.prototype.audit = function() {
