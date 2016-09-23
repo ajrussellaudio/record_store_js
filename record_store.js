@@ -7,6 +7,11 @@ var RecordStore = function( name, location, balance ) {
 
 RecordStore.prototype.addStock = function( record ) {
   this.inventory.push( record );
-}
+};
+
+// RecordStore.prototype.sell = function( record ) {
+//   this.balance -= record.price;
+//   this.inventory
+// }
 
 module.exports = RecordStore;

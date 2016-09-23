@@ -28,11 +28,19 @@ var Record = require( "../record" );
 describe("Record Store with Records", function() {
 
   var recordStore = new RecordStore( "Big Al's Record Store", "Glasgow" );
-  var record = new Record( "Beastie Boys", "Check Your Head", 19.00 )
+  var record1 = new Record( "Beastie Boys", "Check Your Head", 19.00 )
+  var record2 = new Record( "Michael Jackson", "Thriller", 12.00 )
 
   it("can add records to inventory", function() {
-    recordStore.addStock( record );
-    assert.equal( 1, recordStore.inventory.length );
+    recordStore.addStock( record1 );
+    recordStore.addStock( record2 );
+    var firstRecord = recordStore.inventory[0];
+    assert( Record.prototype.isPrototypeOf( firstRecord ) );
+  })
+
+  it("can list its inventory", function() {
+    var expectedReturn = "Beastie Boys - 'Check Your Head'\nMichael Jackson - 'Thriller'";
+    assert.equal( expectedReturn, recordStore.listInventory() )
   })
 
 }) 
