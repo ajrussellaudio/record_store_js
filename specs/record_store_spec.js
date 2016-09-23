@@ -49,4 +49,8 @@ describe("Record Store with Records", function() {
     assert.equal( 1019, recordStore.balance );
   });
 
+  it("can audit its financial situation, returning object");
+
+  it("can audit its financial situation, returning string")
+
 }) 
