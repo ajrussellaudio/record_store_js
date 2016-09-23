@@ -49,8 +49,14 @@ describe("Record Store with Records", function() {
     assert.equal( 1019, recordStore.balance );
   });
 
-  it("can audit its financial situation, returning object");
+  it("can audit its financial situation, returning object", function() {
+    var expectedReturn = { balance: 1019, stockValue: 12 };
+    assert.equal( expectedReturn, recordStore.audit() );
+  });
 
-  it("can audit its financial situation, returning string")
+  it("can audit its financial situation, returning string", function() {
+    var expectedReturn = "Balance: £1019\nTotal Stock Value: £12";
+    assert.equal( expectedReturn, recordStore.prettyAudit() );
+  });
 
 }) 
