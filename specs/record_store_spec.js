@@ -27,6 +27,12 @@ var Record = require( "../record" );
 
 describe("Record Store with Records", function() {
 
-  it("can add records to inventory")
+  var recordStore = new RecordStore( "Big Al's Record Store", "Glasgow" );
+  var record = new Record( "Beastie Boys", "Check Your Head", 19.00 )
+
+  it("can add records to inventory", function() {
+    recordStore.addStock( record );
+    assert.equal( 1, recordStore.inventory.length );
+  })
 
 }) 
