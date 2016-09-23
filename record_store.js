@@ -22,9 +22,10 @@ RecordStore.prototype.listInventory = function() {
   return inventoryAsStrings.join('\n');
 }
 
-// RecordStore.prototype.sell = function( record ) {
-//   this.balance -= record.price;
-//   this.inventory
-// }
+RecordStore.prototype.sell = function( record ) {
+  this.balance += record.price;
+  var index = this.inventory.indexOf( record );
+  this.inventory.splice(index, 1);
+}
 
 module.exports = RecordStore;

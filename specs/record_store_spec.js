@@ -19,7 +19,7 @@ describe("Record Store", function() {
 
   it("has a bank balance", function() {
     assert.equal( 1000, recordStore.balance );
-  })
+  });
 
 })
 
@@ -36,11 +36,17 @@ describe("Record Store with Records", function() {
     recordStore.addStock( record2 );
     var firstRecord = recordStore.inventory[0];
     assert( Record.prototype.isPrototypeOf( firstRecord ) );
-  })
+  });
 
   it("can list its inventory", function() {
     var expectedReturn = "Beastie Boys - 'Check Your Head'\nMichael Jackson - 'Thriller'";
     assert.equal( expectedReturn, recordStore.listInventory() )
-  })
+  });
+
+  it("can sell a record", function() {
+    recordStore.sell( record1 );
+    assert.equal( 1, recordStore.inventory.length );
+    assert.equal( 1019, recordStore.balance );
+  });
 
 }) 
