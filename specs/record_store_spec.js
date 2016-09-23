@@ -51,7 +51,7 @@ describe("Record Store with Records", function() {
 
   it("can audit its financial situation, returning object", function() {
     var expectedReturn = { balance: 1019, stockValue: 12 };
-    assert.equal( expectedReturn, recordStore.audit() );
+    assert.deepEqual( expectedReturn, recordStore.audit() );
   });
 
   it("can audit its financial situation, returning string", function() {
