@@ -17,4 +17,16 @@ describe("Record Store", function() {
     assert.deepEqual( [], recordStore.inventory );
   });
 
+  it("has a bank balance", function() {
+    assert.equal( 1000, recordStore.balance );
+  })
+
 })
+
+var Record = require( "../record" );
+
+describe("Record Store with Records", function() {
+
+  it("can add records to inventory")
+
+}) 
