@@ -50,9 +50,8 @@ describe("Record Store with Records", function() {
   });
 
   it("will not sell a record not in stock", function() {
-    recordStore.sell( new Record( "Justin Bieber", "My World 2.0" ) );
-    assert.equal( 1, recordStore.inventory.length );
-    assert.equal( 1019, recordStore.balance );
+    var bieberRecord = new Record( "Justin Bieber", "My World 2.0" )
+    assert.equal( -1, recordStore.sell( bieberRecord ) );
   })
 
   it("can audit its financial situation (object)", function() {

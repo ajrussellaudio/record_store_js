@@ -25,6 +25,9 @@ RecordStore.prototype.sell = function( record ) {
   if( index >= 0 ) {
     this.balance += record.price;
     this.inventory.splice(index, 1);
+    return 1;
+  } else {
+    return -1;
   }
 };
 
