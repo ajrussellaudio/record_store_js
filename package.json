@@ -1,0 +1,14 @@
+{
+  "name": "record_store_again",
+  "version": "1.0.0",
+  "description": "A store for records. Just like we did in Ruby! Yaaaayyyy!",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha specs"
+  },
+  "author": "Alan \"the Don Dada\" Russell",
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^3.0.2"
+  }
+}
